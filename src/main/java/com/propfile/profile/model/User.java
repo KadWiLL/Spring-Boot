@@ -18,7 +18,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "owner")
 public class User {
 
     @Id
@@ -41,8 +41,8 @@ public class User {
     @NotEmpty
     private String email;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("user")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("owner")
     private List<Post> posts = new ArrayList<>();
 
 

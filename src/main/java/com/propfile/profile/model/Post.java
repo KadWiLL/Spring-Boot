@@ -38,7 +38,7 @@ public class Post {
 
     private int dislikes = 0;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnoreProperties("posts")
     private User user;

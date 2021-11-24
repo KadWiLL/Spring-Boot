@@ -24,7 +24,7 @@ public class UserController {
 
     @Autowired
     private final UserService userService;
-    private final PostRepository postRepository;
+
 
     @GetMapping("/api/users")
     public ResponseEntity<List<User>> apiFindAllUser(){
